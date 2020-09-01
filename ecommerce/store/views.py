@@ -1,9 +1,21 @@
 from django.shortcuts import render
 from .models import *
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponse,HttpResponseRedirect
 import json
 import datetime
 from .utils import cookieCart,cartData,guestOrder
+
+import hashlib
+from django.views.decorators.csrf import csrf_exempt,csrf_protect
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
+
+
+def inicio(request):
+    return render(request,'store/index.html')
+
+
 def store(request):
     
     data=cartData(request)
@@ -27,16 +39,14 @@ def cart(request):
     context={'items':items,'order':order,'cartItems':cartItems}
     return render(request,'store/cart.html',context)
     
-
 def checkout(request):
-
+    
     data=cartData(request)
     cartItems=data['cartItems']
     order=data['order']
     items=data['items']
     context = {'items':items,'order':order,'cartItems':cartItems}
     return render(request,'store/checkout.html', context)
-
 
 def updateItem(request):
     # Information Of What User Has Done

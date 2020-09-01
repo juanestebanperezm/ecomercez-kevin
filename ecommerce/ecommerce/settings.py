@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
+    
+ 
+    
 ]
 
 MIDDLEWARE = [
@@ -127,4 +130,13 @@ STATICFILES_DIRS = [
 MEDIA_URL='/images/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'ecommerce/static/images')
+
+
+
+#PAY U
+
+
+
+
+
 

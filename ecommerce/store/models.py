@@ -13,7 +13,7 @@ class Customer(models.Model):
 class Product(models.Model):
     name=models.CharField(max_length=200,null=True)
     price=models.DecimalField(max_digits=7,decimal_places=2)
-    digital=models.BooleanField(default=False,null=True)
+    digital=models.BooleanField(default=False)
     image=models.ImageField(null=True,blank=True)
     
     def __str__(self):
@@ -30,7 +30,7 @@ class Product(models.Model):
 class Order (models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)
     date_order=models.DateTimeField(auto_now_add=True)
-    complete=models.BooleanField(default=False,null=True,blank=False)
+    complete=models.BooleanField(default=False,blank=False)
     transction_id=models.CharField(max_length=200,null=True)
 
     def __str__(self):

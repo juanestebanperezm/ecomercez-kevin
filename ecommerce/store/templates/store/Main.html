@@ -4,10 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobelo</title>
+    <title>Paravel Chocolates</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+
+
+
+
+
 
     <script type="text/javascript">
     var user='{{request.user}}'
@@ -63,15 +71,16 @@
     
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'store' %}">E Comerce Medellín</a>
+        <a class="navbar-brand" href="{% url 'store' %}">Paravels</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-nav" href="{% url 'inicio' %}">Inicio</a>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'store' %}">Tienda <span class="sr-only">(current)</span></a>
+              <a class="navbar-nav p-2" href="{% url 'store' %}">Tienda <span class="sr-only">(current)</span></a>
             </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
